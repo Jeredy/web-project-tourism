@@ -1,18 +1,27 @@
 import React from "react";
 import { Button } from "../button/button.component";
 
-import "../App.css";
+import ReactPlayer from "react-player";
+
+import "../../App.css";
 import "./hero-section.styles.css";
 
 const HeroSection = () => {
   return (
     <div className="hero-container">
-      <video src="../assets/videos/video-2.mp4" autoPlay loop muted />
+      {/* <video autoPlay loop muted /> */}
+      <ReactPlayer
+        className="video"
+        loop={true}
+        width="100%"
+        height="100%"
+        muted={true}
+        volume={0}
+        url="https://www.youtube.com/watch?v=ysz5S6PUM-U"
+      />
       <h1>ADVENTURE AWAITS</h1>
-
-      <p>What are you wating for?</p>
-
-      <div>
+      <p>What are you waiting for?</p>
+      <div className="hero-btns">
         <Button
           className="btns"
           buttonStyle="btn--outline"
@@ -24,6 +33,7 @@ const HeroSection = () => {
           className="btns"
           buttonStyle="btn--primary"
           buttonSize="btn--large"
+          onClick={console.log("hey")}
         >
           WATCH TRAILER <i className="far fa-play-circle" />
         </Button>
